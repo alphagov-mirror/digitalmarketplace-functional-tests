@@ -194,7 +194,6 @@ Scenario Outline: View requirement in a dashboard
     | draft     | Unpublished requirements |
 
 
-@skip-staging
 Scenario: Delete a draft requirement
   Given I am logged in as the buyer of a draft brief
   And I go to that brief overview page
@@ -208,7 +207,6 @@ Scenario: Delete a draft requirement
   And I see a success flash message containing 'were deleted'
 
 
-@skip-staging
 Scenario: Cancel a delete draft requirement request
   Given I am logged in as the buyer of a draft brief
   And I go to that brief overview page
@@ -221,7 +219,6 @@ Scenario: Cancel a delete draft requirement request
   Then I am on that brief overview page
 
 
-@skip-staging
 Scenario: Withdraw live requirements
   Given I am logged in as the buyer of a live brief
 
@@ -239,7 +236,6 @@ Scenario: Withdraw live requirements
   Then I see a success flash message containing 'withdrawn your requirements'
 
 
-@skip-staging
 Scenario: Cancel a withdraw draft requirement request
   Given I am logged in as the buyer of a live brief
   And I go to that brief overview page
@@ -251,7 +247,7 @@ Scenario: Cancel a withdraw draft requirement request
   And I click 'Cancel'
   Then I am on that brief overview page
 
-@skip-local @skip-preview
+@skip-staging
 Scenario: Delete a draft requirement
   Given I am logged in as a buyer user
   And I have created an individual specialist requirement
@@ -262,7 +258,7 @@ Scenario: Delete a draft requirement
   Then I see a success flash message containing 'were deleted'
 
 
-@skip-local @skip-preview
+@skip-staging
 Scenario: Withdraw live requirements
   Given I am logged in as the buyer of a live brief
 
