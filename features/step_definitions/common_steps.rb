@@ -462,6 +462,13 @@ Then /^I see the closing date of the brief in the '(.*)' summary table$/ do |tab
   step "I see '#{closing_date.strftime('%A %-d %B %Y')}' in the '#{table_heading}' summary table"
 end
 
+
+Then /^I see the closing date of the brief in the '(.*)' table$/ do |table_heading|
+  closing_date = DateTime.strptime(@brief['createdAt'], '%Y-%m-%dT%H:%M:%S') + 14
+  step "I see '#{closing_date.strftime('%A %-d %B %Y')}' in the '#{table_heading}' summary table"
+end
+
+
 Then /^I see the '(.*)' (radio button|checkbox) is (not |)checked(?: for the '(.*)' question)?$/ do |elem_name, elem_type, negative, question|
   if elem_type == 'radio button'
     elem_type = 'radio'
